@@ -24,7 +24,6 @@ class _CovidTrackerState extends State<CovidTracker> {
   void getStatus() async {
     final network = Networking();
     final data = await network.getData();
-    final status = data['status'].toString();
     final phCases =
         data['data']['regions']['philippines']['total_cases'].toString();
     final phActiveCases =
