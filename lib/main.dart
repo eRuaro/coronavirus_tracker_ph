@@ -1,4 +1,5 @@
 import 'package:coronavirus_tracker_ph/networking/networking.dart';
+import 'file:///C:/Users/Public/GitHub/coronavirus_tracker_ph/lib/widgets/data_container.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(
@@ -46,49 +47,49 @@ class _CovidTrackerState extends State<CovidTracker> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color(0xFFFC1441).withOpacity(0.15),
-                    borderRadius: BorderRadius.circular(20),
-                  ), 
-                  width: 179,
-                  height: 131,
-                  child: Column(
-                    children: [
-                      Text('Confirmed'),
-                      Text(_totalCases),
-                    ],
-                  ),
-                  padding: const EdgeInsets.all(10),
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color(0xffFC1441).withOpacity(0.15),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  width: 179,
-                  height: 131,
-                  child: Column(
-                    children: [
-                      Text('Active'),
-                      Text(_totalCases),
-                    ],
-                  ),
-                  padding: const EdgeInsets.all(10),
-                ),
-              ],
-            ),
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              DataContainer(
+                data: 'Confirmed',
+                color: Color(0xFFFC1441),
+                dataValue: _totalCases,
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              DataContainer(
+                color: Color(0xFF157FFB),
+                data: 'Active',
+                dataValue: _activeCases,
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              DataContainer(
+                data: 'Recovered',
+                color: Color(0xFF30A64A),
+                dataValue: _recovered,
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              DataContainer(
+                color: Color(0xFF6D757D),
+                data: 'Deceased',
+                dataValue: _deaths,
+              ),
+            ],
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.network_check),
