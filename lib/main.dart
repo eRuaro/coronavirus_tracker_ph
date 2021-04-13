@@ -15,11 +15,11 @@ class CovidTracker extends StatefulWidget {
 }
 
 class _CovidTrackerState extends State<CovidTracker> {
-  String _status;
-  String _totalCases;
-  String _activeCases;
-  String _deaths;
-  String _recovered;
+  String _status = '';
+  String _totalCases = '';
+  String _activeCases = '';
+  String _deaths = '';
+  String _recovered = '';
 
   void getStatus() async {
     final network = Networking();
@@ -50,17 +50,49 @@ class _CovidTrackerState extends State<CovidTracker> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (_status != null) Text(_status),
-            if (_totalCases != null) Text('Total Cases: $_totalCases'),
-            if (_activeCases != null) Text('Active Cases: $_activeCases'),
-            if (_deaths != null) Text('Deaths: $_deaths'),
-            if (_recovered != null) Text('Recovered: $_recovered'),
-            ElevatedButton(
-              onPressed: () => getStatus(),
-              child: Text('Get Data'),
+            Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFFFC1441).withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(20),
+                  ), 
+                  width: 179,
+                  height: 131,
+                  child: Column(
+                    children: [
+                      Text('Confirmed'),
+                      Text(_totalCases),
+                    ],
+                  ),
+                  padding: const EdgeInsets.all(10),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xffFC1441).withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  width: 179,
+                  height: 131,
+                  child: Column(
+                    children: [
+                      Text('Active'),
+                      Text(_totalCases),
+                    ],
+                  ),
+                  padding: const EdgeInsets.all(10),
+                ),
+              ],
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.network_check),
+        onPressed: () => getStatus(),
       ),
     );
   }
