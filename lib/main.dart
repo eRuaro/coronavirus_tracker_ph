@@ -16,7 +16,6 @@ class CovidTracker extends StatefulWidget {
 }
 
 class _CovidTrackerState extends State<CovidTracker> {
-  String _status = '';
   String _totalCases = '';
   String _activeCases = '';
   String _deaths = '';
@@ -36,7 +35,6 @@ class _CovidTrackerState extends State<CovidTracker> {
         data['data']['regions']['philippines']['recovered'].toString();
 
     setState(() {
-      _status = status;
       _totalCases = phCases;
       _activeCases = phActiveCases;
       _deaths = phDeathCases;
