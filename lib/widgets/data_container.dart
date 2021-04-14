@@ -11,6 +11,16 @@ class DataContainer extends StatelessWidget {
   final String data;
   final Color color;
 
+  final dataNameTextStyle = TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w500,
+  );
+
+  final dataAttributeTextStyle = TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.w600,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,16 +32,21 @@ class DataContainer extends StatelessWidget {
       height: 140,
       child: Column(
         children: [
-
           Align(
-            child: Text('$data'),
+            child: Text(
+              '$data',
+              style: dataNameTextStyle,
+            ),
             alignment: Alignment.topLeft,
           ),
           SizedBox(
             height: 60,
           ),
           Align(
-            child: Text('$dataValue'),
+            child: Text(
+              '$dataValue',
+              style: dataAttributeTextStyle,
+            ),
             alignment: Alignment.bottomRight,
           ),
         ],

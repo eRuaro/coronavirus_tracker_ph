@@ -1,10 +1,11 @@
 import 'package:coronavirus_tracker_ph/networking/networking.dart';
-import 'file:///C:/Users/Public/GitHub/coronavirus_tracker_ph/lib/widgets/data_container.dart';
+import 'package:coronavirus_tracker_ph/widgets/data_container.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(
       MaterialApp(
         home: CovidTracker(),
+        debugShowCheckedModeBanner: false,
       ),
     );
 
