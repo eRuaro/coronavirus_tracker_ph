@@ -14,11 +14,13 @@ class DataContainer extends StatelessWidget {
   final dataNameTextStyle = TextStyle(
     fontSize: 17,
     fontWeight: FontWeight.w500,
+    fontFamily: 'Poppins'
   );
 
   final dataAttributeTextStyle = TextStyle(
     fontSize: 25,
     fontWeight: FontWeight.w600,
+    fontFamily: 'Poppins'
   );
 
   @override
