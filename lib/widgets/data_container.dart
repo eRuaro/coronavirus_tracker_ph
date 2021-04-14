@@ -11,17 +11,18 @@ class DataContainer extends StatelessWidget {
   final String data;
   final Color color;
 
-  final dataNameTextStyle = TextStyle(
-    fontSize: 17,
-    fontWeight: FontWeight.w500,
-    fontFamily: 'Poppins'
-  );
+  // final dataNameTextStyle = TextStyle(
+  //   fontSize: 17,
+  //   fontWeight: FontWeight.w500,
+  //   fontFamily: 'Poppins',
+  //   color:
+  // );
 
-  final dataAttributeTextStyle = TextStyle(
-    fontSize: 25,
-    fontWeight: FontWeight.w600,
-    fontFamily: 'Poppins'
-  );
+  // final dataAttributeTextStyle = TextStyle(
+  //   fontSize: 25,
+  //   fontWeight: FontWeight.w600,
+  //   fontFamily: 'Poppins',
+  // );
 
   @override
   Widget build(BuildContext context) {
@@ -35,25 +36,46 @@ class DataContainer extends StatelessWidget {
       child: Column(
         children: [
           Align(
-            child: Text(
-              '$data',
-              style: dataNameTextStyle,
+            child: Padding(
+              padding: EdgeInsets.only(
+                top: 15,
+                left: 15,
+              ),
+              child: Text(
+                '$data',
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Poppins',
+                  color: color,
+                ),
+              ),
             ),
             alignment: Alignment.topLeft,
           ),
           SizedBox(
-            height: 60,
+            height: 45,
           ),
           Align(
-            child: Text(
-              '$dataValue',
-              style: dataAttributeTextStyle,
+            child: Padding(
+              padding: EdgeInsets.only(
+                right: 15,
+                bottom: 15,
+              ),
+              child: Text(
+                '$dataValue',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'Poppins',
+                  color: color,
+                ),
+              ),
             ),
             alignment: Alignment.bottomRight,
           ),
         ],
       ),
-      padding: const EdgeInsets.all(15),
     );
   }
 }
