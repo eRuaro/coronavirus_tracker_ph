@@ -48,6 +48,38 @@ class _CovidTrackerState extends State<CovidTracker> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Padding(
+            padding: EdgeInsets.only(
+              left: 20,
+              bottom: 15,
+            ),
+            child: Align(
+              child: Text(
+                'Philippines',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 40,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xff142237),
+                ),
+              ),
+              alignment: Alignment.topLeft,
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          AspectRatio(
+            aspectRatio: 1.8,
+            child: Image(
+              image: AssetImage(
+                'assets/images/coronavirus.png',
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 40,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -95,5 +127,4 @@ class _CovidTrackerState extends State<CovidTracker> {
       ),
     );
   }
-
 }
