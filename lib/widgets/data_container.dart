@@ -11,19 +11,6 @@ class DataContainer extends StatelessWidget {
   final String data;
   final Color color;
 
-  // final dataNameTextStyle = TextStyle(
-  //   fontSize: 17,
-  //   fontWeight: FontWeight.w500,
-  //   fontFamily: 'Poppins',
-  //   color:
-  // );
-
-  // final dataAttributeTextStyle = TextStyle(
-  //   fontSize: 25,
-  //   fontWeight: FontWeight.w600,
-  //   fontFamily: 'Poppins',
-  // );
-
   @override
   Widget build(BuildContext context) {
     return Container(

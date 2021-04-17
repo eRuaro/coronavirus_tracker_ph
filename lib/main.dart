@@ -25,20 +25,20 @@ class _CovidTrackerState extends State<CovidTracker> {
   void getStatus() async {
     final network = Networking();
     final data = await network.getData();
-    final phCases =
+    final totalCases =
         data['data']['regions']['philippines']['total_cases'].toString();
-    final phActiveCases =
+    final activeCases =
         data['data']['regions']['philippines']['active_cases'].toString();
-    final phDeathCases =
+    final deceasedCases =
         data['data']['regions']['philippines']['deaths'].toString();
-    final phRecoveredCases =
+    final recoveredCases =
         data['data']['regions']['philippines']['recovered'].toString();
 
     setState(() {
-      _totalCases = phCases;
-      _activeCases = phActiveCases;
-      _deaths = phDeathCases;
-      _recovered = phRecoveredCases;
+      _totalCases = totalCases;
+      _activeCases = activeCases;
+      _deaths = deceasedCases;
+      _recovered = recoveredCases;
     });
   }
 
@@ -95,4 +95,5 @@ class _CovidTrackerState extends State<CovidTracker> {
       ),
     );
   }
+
 }
