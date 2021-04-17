@@ -121,10 +121,10 @@ class _CovidTrackerState extends State<CovidTracker> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.network_check),
-        onPressed: () => getStatus(),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.network_check),
+      //   onPressed: () => getStatus(),
+      // ),
     );
   }
 }
